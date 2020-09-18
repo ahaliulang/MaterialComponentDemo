@@ -17,14 +17,14 @@ class MaskedCardView @JvmOverloads constructor(
 ) : MaterialCardView(context, attrs, defStyle) {
     private val pathProvider = ShapeAppearancePathProvider()
     private val path = Path()
-    private val shapeAppearance:ShapeAppearanceModel = ShapeAppearanceModel.builder(
+    private val shapeAppearance: ShapeAppearanceModel = ShapeAppearanceModel.builder(
         context,
         attrs,
         defStyle,
         R.style.Widget_MaterialComponents_CardView
     ).build()
 
-    private val rectF = RectF(0f,0f,0f,0f)
+    private val rectF = RectF(0f, 0f, 0f, 0f)
 
     override fun onDraw(canvas: Canvas?) {
         canvas?.clipPath(path)
@@ -34,7 +34,7 @@ class MaskedCardView @JvmOverloads constructor(
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         rectF.right = w.toFloat()
         rectF.bottom = h.toFloat()
-        pathProvider.calculatePath(shapeAppearance,1f,rectF,path)
+        pathProvider.calculatePath(shapeAppearance, 1f, rectF, path)
         super.onSizeChanged(w, h, oldw, oldh)
     }
 

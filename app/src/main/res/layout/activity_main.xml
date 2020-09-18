@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
     tools:context=".MainActivity">
 
+    <com.example.materialcomponentdemo.materialview.MaskedCardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="#ff0000"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Diamond" >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"/>
+    </com.example.materialcomponentdemo.materialview.MaskedCardView>
 
-   <com.example.materialcomponentdemo.materialview.MaskedCardView
-       app:cardBackgroundColor="#0037FF"
-       android:elevation="0dp"
-       app:strokeWidth="0dp"
-       app:cardElevation="0dp"
-       app:shapeAppearanceOverlay="@style/ShapeAppearance.Material.Card"
-       android:layout_width="match_parent"
-       android:layout_height="100dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="20dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:cornerRadius="100dp"
+        android:text="按钮"
+        android:textSize="50dp" />
 
 
-</RelativeLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:background="#ff0000"
+        android:layout_margin="20dp"
+        android:src="@drawable/test"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Circle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+</LinearLayout>
+
+
+
+
